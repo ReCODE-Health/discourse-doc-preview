@@ -1,0 +1,15 @@
+.doc-preview {
+  width: 100%;
+  background-color: $primary-high;
+  border: 0;
+  margin: 10px auto 25px auto;
+}
+
+.attachment.new-tab-doc {
+  &:before {
+    display: none;
+  }
+  .new-tab-doc-icon {
+    margin-right: 4px;
+  }
+}

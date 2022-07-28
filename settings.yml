@@ -1,0 +1,8 @@
+preview_mode:
+  type: enum
+  default: Inline
+  description:
+    en: "<b>Inline:</b> Document attachments will be rendered inline within posts<br><br><b>New Tab:</b> Document attachment links will take the user to a new tab where the Document will be rendered"
+  choices:
+    - Inline
+    - New Tab
