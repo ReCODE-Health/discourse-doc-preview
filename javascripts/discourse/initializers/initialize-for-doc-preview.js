@@ -1,14 +1,14 @@
 import {withPluginApi} from "discourse/lib/plugin-api";
 import {iconHTML} from "discourse-common/lib/icon-library";
-import Mobile from "discourse/lib/mobile";
 
 const PREVIEW_HEIGHT = 500;
 
 export default {
   name: "doc-previews",
-  initialize() {
+  initialize(container) {
     withPluginApi("0.8.41", (api) => {
-      if (Mobile.mobileView) return;
+      const site = container.lookup("service:site");
+      if (site.mobileView) return;
 
       try {
         const previewModeSetting = settings.preview_mode;
