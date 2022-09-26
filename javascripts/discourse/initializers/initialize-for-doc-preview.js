@@ -1,4 +1,4 @@
-import {withPluginApi} from "discourse/lib/plugin-api";
+import {withPluginpi} from "discourse/lib/plugin-api";
 import {iconHTML} from "discourse-common/lib/icon-library";
 import Mobile from "discourse/lib/mobile";
 
@@ -31,7 +31,7 @@ export default {
 
         const setUpPreviewType = (doc, renderMode) => {
           if (renderMode === "Inline") {
-            let preview = createPreviewElement();
+            const preview = createPreviewElement();
             doc.classList.add("doc-attachment");
             doc.after(preview);
 
@@ -70,7 +70,7 @@ export default {
               // we don't need the space anymore.
               doc.innerText = doc.innerText.trim();
 
-              let preview = setUpPreviewType(doc, renderMode);
+              const preview = setUpPreviewType(doc, renderMode);
 
               if (renderMode === "Inline") {
                 const href = doc.href
