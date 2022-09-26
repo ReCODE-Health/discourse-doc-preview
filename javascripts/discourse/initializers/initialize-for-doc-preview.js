@@ -1,4 +1,4 @@
-import {withPluginpi} from "discourse/lib/plugin-api";
+import {withPluginApi} from "discourse/lib/plugin-api";
 import {iconHTML} from "discourse-common/lib/icon-library";
 import Mobile from "discourse/lib/mobile";
 
@@ -47,7 +47,7 @@ export default {
           (post) => {
             const attachments = [...post.querySelectorAll(".attachment")];
             const docs = attachments.filter((attachment) =>
-              attachment.href.match(/\.[(pdf|doc|docx)]+$/)
+              attachment.href.match(/\.[(PDF|pdf|DOC|doc|DOCX|docx)]+$/)
             );
             docs.forEach((doc) => {
               const fileSize = doc.nextSibling;
@@ -75,8 +75,8 @@ export default {
               if (renderMode === "Inline") {
                 const href = doc.href
                 const currURL = window.location.host
-                href = href.includes(currURL)? href: currURL+href;
-                preview.src = 'https://docs.google.com/gview?url=' +  href + '&embedded=true';
+                const new_href = href.includes(currURL)? href: currURL+href;
+                preview.src = 'https://docs.google.com/gview?url=' +  new_href + '&embedded=true';
               }
 
               if (renderMode === "New Tab") {
