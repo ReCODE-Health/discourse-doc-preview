@@ -31,7 +31,7 @@ export default {
 
         const setUpPreviewType = (doc, renderMode) => {
           if (renderMode === "Inline") {
-            const preview = createPreviewElement();
+            let preview = createPreviewElement();
             doc.classList.add("doc-attachment");
             doc.after(preview);
 
@@ -70,7 +70,7 @@ export default {
               // we don't need the space anymore.
               doc.innerText = doc.innerText.trim();
 
-              const preview = setUpPreviewType(doc, renderMode);
+              let preview = setUpPreviewType(doc, renderMode);
 
               if (renderMode === "Inline") {
                 const href = doc.href
